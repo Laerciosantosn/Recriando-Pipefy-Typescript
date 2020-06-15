@@ -1,0 +1,85 @@
+*** Configurar padrões de código ***
+- Bilbiotecas
+  - eslint: Como desenvolvimento OBS: remover a configuração do package.json
+            "eslintConfig": { "extends": "react-app" }
+  executar yarn eslint --init  'pra criar o arquivo eslintrc'
+  Opções:
+    1 - To check syntax, find problems, and enforce code style.
+    2 - JavaScript modules (import/export)
+    3 - React
+    4 - Yes
+    5 - (*) Browser
+    6 - Use a popular style guide
+    7 - Airbnb:
+    8 - JSON
+    9 - No
+    10 - No  "Somente se estiver usando yarn" || "Se estiver usando o NPM usar YES"
+    Se estiver usando o yanr copiar as dependências
+
+    Selecionar uma versão do react-hooks
+    remover aopção de instalar o eslint p/q ja instalamos
+    instalar os plugins como dependência de desenvolvimento
+
+    eslint-plugin-react@^7.19.0 @typescript-eslint/eslint-plugin@latest eslint-config-airbnb@latest eslint-plugin-import@^2.20.1 eslint-plugin-jsx-a11y@^6.2.3 eslint-plugin-react-hooks@^2.5.0 @typescript-eslint/parser@latest -D
+
+    Instalar todos os modulos
+    Criar um arquivo ignore .eslintignore
+
+Configurações .eslintignore
+    com as configurações mostrando o que deve ser ignorado
+      **/*.js
+      node_modules
+      build
+
+Configurações .eslintrc
+  add
+   "extends": [
+        "plugin:@typescript-eslint/recommended",
+         "prettier/@typescript-eslint",
+        "plugin:prettier/recommended"
+    ],
+  "globals": {
+      "Atomics": "readonly",
+      "SharedArrayBuffer": "readonly"
+    },
+    "plugins": [
+      "react-hooks",
+       "prettier"
+    ],
+    "rules": {
+      "prettier/prettier": "error",
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "warn",
+      "react/jsx-filename-extension": [1, { "extensions": [".tsx"] } ],
+      "import/prefer-default-export": "off",
+      "import/extensions" : [
+        "error",
+        "ignorePackages",
+        {
+          "ts": "never",
+          "tsx": "never"
+        }
+      ]
+    },
+    "settings": {
+      "import/resolver": {
+        "typescript": {}
+      }
+    }
+
+instalar a lib
+   yarn add eslint-import-resolver-typescript -D
+   pra fazer o react enteder arquivos typescript
+
+instalar
+ prettier
+ yarn add prettier eslint-config-prettier eslint-plugin-prettier -D
+
+Criar um arquivo prettier.config.js.
+    module.exports = {
+      singleQuote: true,
+      trailingComma: 'all',
+      allowParens: 'avoid',
+    }
+
+

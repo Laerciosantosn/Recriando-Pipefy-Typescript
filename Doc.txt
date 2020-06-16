@@ -83,3 +83,5 @@ Criar um arquivo prettier.config.js.
     }
 
 
+
+styled-components
